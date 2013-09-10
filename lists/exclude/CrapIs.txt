@@ -1,0 +1,11 @@
+% http: //www.denic.de/en/domains/whois-service/web-whois.html
+% whois service available at the DENIC website: 
+% Version:  2.0
+About In2net, please visit:  http: //www.in2net.com
+    DNS/Nameserver changes, and general domain support questions.
+    This company may be contacted for domain login/passwords,
+    URL of the ICANN WHOIS Data Problem Reporting System:
+    http: //wdprs.internic.net/
+% available to:
+% for more information on IANA, visit http: //www.iana.org
+% This query returned 1 object
