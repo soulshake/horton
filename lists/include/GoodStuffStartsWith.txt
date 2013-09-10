@@ -1,0 +1,72 @@
+query:
+reg-name:
+registrar name:
+query_datetime:
+domain_name:
+query_status:
+domain_dateregistered:
+domain_datebilleduntil:
+domain_datelastmodified:
+domain_delegaterequested:
+domain_signed:
+registrar_name:
+registrar_address1:
+registrar_address2:
+registrar_city:
+registrar_country:
+registrar_phone:
+registrar_fax:
+registrar_email:
+registrant_contact_name:
+registrant_contact_address1:
+registrant_contact_city:
+registrant_contact_country:
+registrant_contact_phone:
+registrant_contact_email:
+admin_contact_name:
+admin_contact_address1:
+admin_contact_city:
+admin_contact_country:
+admin_contact_phone:
+admin_contact_email:
+technical_contact_name:
+technical_contact_address1:
+technical_contact_city:
+technical_contact_country:
+technical_contact_phone:
+technical_contact_email:
+ns_name_01:
+ns_name_02:
+ns_name_03:
+Nameservers 
+ns-list:
+registrar:
+keyset:
+nsset:
+% Administrative Contact:
+% Technical Contact:
+Registrant Organization:
+Administrative Contact Organization:
+Domain servers in listed order
+   Domain servers in listed order:
+To single out one record
+domain:
+contact-hdl:
+source:
+Domain Name:
+nameserver:
+tech-contact:
+admin-contact:
+owner-contact:
+organisation:
+contact:
+nserver:
+created:
+descr:
+admin-c:
+tech-c:
+registration:
+renewal:
+status:
+person:
+nic-hdl:
