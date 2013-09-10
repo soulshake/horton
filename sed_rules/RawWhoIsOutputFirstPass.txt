@@ -1,0 +1,21 @@
+s/\&\%\&/\&\&/g
+s/Includes:\&\&/Includes:\&/g
+s/listed order:\&\&/listed order:\&/g
+s/listed in order:\&\&/listed in order:\&/g
+s/Contact:\&\&/Contact:\&/g
+s/\&Registrar:/\&\&Registrar:/g
+s/\&Name servers:/\&\&Name servers:/g
+s/\&Name Servers Information:\&\&/\&\&Name Servers Information:\&/g
+s/:/: /g
+s/\&\%\&/\&\&/g
+s/Name Server: \&Name Server: \&Name Server: \&Name Server: \&Name Server: /Name Server: /g
+s/Name Server: \&Name Server: \&Name Server: /Name Server: /g
+s/Name Server: \&Name Server: /Name Server: /g
+s/DreamHost whois server terms of service/\&DreamHost whois server terms of service/g
+s/\:\ \&/\:\&/g
+s/\& *Domain Name:/\&\&Domain Name:/g
+s/\&Domain Name:/\&\&Domain Name:/g
+s/\&domain:/\&\&domain:/g
+s/\&NOTE:/\&\&NOTE:/g
+s/\&Registrant:/\&\&Registrant:/g
+s/\& *DNS Servers:\&\&/\&DNS Servers:\&/g
