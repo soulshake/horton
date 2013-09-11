@@ -105,6 +105,11 @@ if [ "${IsIP}" != "yes" ] ; then
 			# but www.news.com.au should become news.com.au
 			# and riedam.lt should not be chopped
 			 [ "${TheDomain}" != "${TheDomain#*\.*\.}" ] && TheDomain="${TheDomain%.*}"
+		else
+			:
+			# Here the domain ends with .3.2
+			# if it's .com.au for example, it should not be chopped
+			# if it's philippines.hvu.nl then it should be chopped to hvu.nl... which presents a problem here.
 		fi
 	else
 		# Here the domain does not end with 2 chrs so if there is a third segment, drop it
@@ -132,6 +137,9 @@ IFS=''
 # Get the whois output and convert ampersands to + and line endings to ampersands (so that we can try to create blocks of text instead of lines)
 # Also add spaces following colons
 AllText=$( whois "${TheDomain}" | tr '&' '+' | tr '\n' '&' | sed -f "${MyDir}/lists/sed_rules/RawWhoIsOutputFirstPass.txt" )
+
+# Due to URLs such as philippines.hvu.nl from which the domain name is not being extracted properly.
+[ "${AllText}" != "${AllText/invalid}" ] && echo "Error - check the supplied domain name" && exit 1
 
 # Convert every instance of two consecutive ampersands in the whois output to a line ending
 # This separates the blocks of output
