@@ -65,7 +65,7 @@ if [ "${1}" = "-v" ] ; then
 	Verbose="yes"
 	TheDomain="${2:-ghandi.net}"
 elif  [ "${2}" = "-v" ] ; then 
-	# Noticed from dear cousin's output that she included switches AFTER data on cli. Sheesh.
+	# For those who include switches AFTER data on cli.
 	Verbose="yes"
 	TheDomain="${1:-ghandi.net}"
 else
