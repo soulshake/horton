@@ -37,7 +37,7 @@ echo "${a}"
 #-----------------------------------------------------------------------------#
 
 # declare Variables
-# Note, using substring of $0 instead of dirname (external) for portability
+# Note, using substring of $0 in MyDir instead of dirname (external) for portability
 declare    a IFSold="${IFS}" newline=$'\n' AllText Verbose TheDomain Mode="Blocks" AlternateOutput="no" a FinalOutput MyDir="${0%\/*}" IsIP="no"
 	   # Text color
 declare    black=$(tput setaf 0) red=$(tput setaf 1) green=$(tput setaf 2) yellow=$(tput setaf 3) blue=$(tput setaf 4) magenta=$(tput setaf 5) cyan=$(tput setaf 6) white=$(tput setaf 7)
@@ -105,17 +105,18 @@ if [ "${IsIP}" != "yes" ] ; then
 			# but www.news.com.au should become news.com.au
 			# and riedam.lt should not be chopped
 			 [ "${TheDomain}" != "${TheDomain#*\.*\.}" ] && TheDomain="${TheDomain%.*}"
-		else
-			# Here a domain ends in .3.2 like news.com.au which is fine, but not www.nic.mx which needs to lose the www. portion
-			[ "${TheDomain}" != "${TheDomain%.www}" ] && TheDomain="${TheDomain%.*}"
 		fi
 	else
 		# Here the domain does not end with 2 chrs so if there is a third segment, drop it
 		[ "${TheDomain}" != "${TheDomain#*\.*\.}" ] && TheDomain="${TheDomain%.*}"
 	fi
 
+	# Strip www. if still there
+	[ "${TheDomain}" != "${TheDomain%.www}" ] && TheDomain="${TheDomain%.*}"
+
 	# Reverse the now-trimmed and cleaned domain again so that it won't be backwards anymore
 	TheDomain=$( echo "${TheDomain}" | rev )
+
 fi
 
 # Output the domain name, the command can be commented-out if not desired by pre-pending a "#"
@@ -144,7 +145,8 @@ IFS="${newline}"
 TextBlocks=( ${AllText} )
 
 # If this results in too few text blocks then likely the whois output does not have blank lines between sections and we'll have to do line mode
-if [ ${#TextBlocks[*]} -lt 5 ] ; then
+# Dropped the lower limit to 1 block, seems ok.
+if [ ${#TextBlocks[*]} -lt 2 ] ; then
 	AllText="${AllText//\&/${newline}}"
 	TextBlocks=( ${AllText} )
 	Mode="Lines"
@@ -295,4 +297,7 @@ if [ "${FinalOutput}" = "${FinalOutput/To single out one record/}" ] ; then
 	fi
 fi
 
+# DOH!  UTF-8 Korean output to TextEdit doesn't work so great on Tiger, hmm. Need to check whether TE respects -any- environ settings from plist or scripts etc.
+
 exit 0
+
