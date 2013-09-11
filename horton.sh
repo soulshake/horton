@@ -298,6 +298,7 @@ if [ "${FinalOutput}" = "${FinalOutput/To single out one record/}" ] ; then
 fi
 
 # DOH!  UTF-8 Korean output to TextEdit doesn't work so great on Tiger, hmm. Need to check whether TE respects -any- environ settings from plist or scripts etc.
+# The fix for this here was to set the TextEdit prefs for plaintext file encoding > opening files as unicode UTF-8, works fine now.
 
 exit 0
 
