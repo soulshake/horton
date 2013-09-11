@@ -5,6 +5,7 @@ s/listed in order:\&\&/listed in order:\&/g
 s/Contact:\&\&/Contact:\&/g
 s/\&Registrar:/\&\&Registrar:/g
 s/\&Name servers:/\&\&Name servers:/g
+s/\&Domain Status: ACTIVE/\&\&Domain Status: ACTIVE\&\&/g
 s/\&Name Servers Information:\&\&/\&\&Name Servers Information:\&/g
 s/:/: /g
 s/\&\%\&/\&\&/g

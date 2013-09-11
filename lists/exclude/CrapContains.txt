@@ -1,4 +1,5 @@
 The data in the WHOIS database
+-For Whois usage policy please check:
  Whois server by HKIRC
    Rights restricted by copyright
 This is the AFNIC Whois server.

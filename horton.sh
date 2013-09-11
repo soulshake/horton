@@ -110,6 +110,8 @@ if [ "${IsIP}" != "yes" ] ; then
 			# Here the domain ends with .3.2
 			# if it's .com.au for example, it should not be chopped
 			# if it's philippines.hvu.nl then it should be chopped to hvu.nl... which presents a problem here.
+			# Need to rethink domain extraction routine, perhaps add external list of what's valid as tld and maybe second levels but changes too much... hmm.
+			# Need to find out how A works as to what possible input could actually be and limit to dealing with that, maybe exact domain and no extraction is needed anyway, dunno.
 		fi
 	else
 		# Here the domain does not end with 2 chrs so if there is a third segment, drop it
